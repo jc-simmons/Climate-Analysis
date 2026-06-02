@@ -1,0 +1,71 @@
+<html>
+<head>
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    margin: 20px;
+}
+
+img {
+    max-width: 90%;
+    margin: 10px 0;
+}
+
+button {
+    font-size: 18px;
+    padding: 8px 16px;
+    margin: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Sea FFT Node Flattening Progression</h2>
+
+<button onclick="prev()">← Prev</button>
+<button onclick="next()">Next →</button>
+
+<img id="plot">
+
+<script>
+
+const steps = [
+    "sea_fft_raw.png",
+    "sea_fft_raw-annual.png",
+    "sea_fft_raw-annual-seasonal.png",
+    "sea_fft_raw-annual-seasonal-fourM.png",
+    "sea_fft_raw-asf-9 yrs.png",
+    "sea_fft_raw-asf-9 yrs-4.4yrs.png",
+    "sea_fft_raw-asf-9 yrs-4.4yrs-3.7yrs.png",
+    "sea_fft_raw-asf-9 yrs-4.4yrs-3.7yrs-2.75yrs.png",
+    "sea_fft_raw-asf-9-4.4-3.7-2.7-2k-1k.png"
+];
+
+let i = 0;
+
+function render() {
+    document.getElementById("plot").src = "images/" + steps[i];
+}
+
+function next() {
+    if (i < steps.length - 1) {
+        i++;
+        render();
+    }
+}
+
+function prev() {
+    if (i > 0) {
+        i--;
+        render();
+    }
+}
+
+render();
+
+</script>
+
+</body>
+</html>
