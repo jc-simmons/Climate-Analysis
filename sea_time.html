@@ -1,0 +1,97 @@
+<html>
+<head>
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    margin: 20px;
+}
+
+img {
+    max-width: 90%;
+    margin: 10px 0;
+}
+
+button {
+    font-size: 18px;
+    padding: 8px 16px;
+    margin: 10px;
+}
+
+.tabs {
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 0 5px;
+}
+
+.tab-btn.active {
+    background-color: #6f42c1;
+    color: white;
+    border-color: #6f42c1;
+}
+</style>
+</head>
+
+<body>
+
+<div class="tabs">
+    <button class="tab-btn" onclick="location.href='sea.html'">Sea FFT</button>
+    <button class="tab-btn" onclick="location.href='air.html'">Air FFT</button>
+    <button class="tab-btn active" onclick="location.href='sea_time.html'">Sea Time Domain</button>
+</div>
+
+<h2>Sea Time Domain Harmonic Modeling Progression</h2>
+
+<button onclick="prev()">← Prev</button>
+<button onclick="next()">Next →</button>
+
+<img id="plot">
+
+<script>
+
+const steps = [
+    "model_linear.png",
+    "model_linear_1y.png",
+    "model_linear_1y_6m.png",
+    "model_linear_1y_6m_4m.png",
+    "model_linear_1y_6m_4m_3.67y.png",
+    "model_linear_1y_6m_4m_3.67y_8.8y.png",
+    "model_linear_1y_6m_4m_3.67y_8.8y_4.4y.png",
+    "model_linear_1y_6m_4m_3.67y_8.8y_4.4y_11y.png",
+    "model_linear_1y_6m_4m_3.67y_8.8y_4.4y_11y_7.33y.png",
+    "model_linear_1y_6m_4m_3.67y_8.8y_4.4y_11y_7.33y_5.5y.png"
+];
+
+let i = 0;
+
+function render() {
+    document.getElementById("plot").src = "images/time_domain/" + steps[i];
+}
+
+function next() {
+    if (i < steps.length - 1) {
+        i++;
+        render();
+    }
+}
+
+function prev() {
+    if (i > 0) {
+        i--;
+        render();
+    }
+}
+
+render();
+
+</script>
+
+</body>
+</html>
