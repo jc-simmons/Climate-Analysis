@@ -44,7 +44,8 @@ button {
 <div class="tabs">
     <button class="tab-btn" onclick="location.href='sea.html'">Sea FFT</button>
     <button class="tab-btn" onclick="location.href='air.html'">Air FFT</button>
-    <button class="tab-btn active" onclick="location.href='sea_time.html'">Sea Time Domain</button>
+    <button class="tab-btn active" onclick="location.href='sea_time_model.html'">Sea Time Domain</button>
+    <button class="tab-btn" onclick="location.href='air_time_model.html'">Air Time Domain</button>
 </div>
 
 <h2>Sea Time Domain Harmonic Modeling Progression</h2>
@@ -57,16 +58,15 @@ button {
 <script>
 
 const steps = [
-    "model_linear.png",
-    "model_linear_1y.png",
-    "model_linear_1y_6m.png",
-    "model_linear_1y_6m_4m.png",
-    "model_linear_1y_6m_4m_3.67y.png",
-    "model_linear_1y_6m_4m_3.67y_8.8y.png",
-    "model_linear_1y_6m_4m_3.67y_8.8y_4.4y.png",
-    "model_linear_1y_6m_4m_3.67y_8.8y_4.4y_11y.png",
-    "model_linear_1y_6m_4m_3.67y_8.8y_4.4y_11y_7.33y.png",
-    "model_linear_1y_6m_4m_3.67y_8.8y_4.4y_11y_7.33y_5.5y.png"
+    "model_sea_linear.png",
+    "model_sea_linear_1y.png",
+    "model_sea_linear_1y_6m.png",
+    "model_sea_linear_1y_6m_4m.png",
+    "model_sea_linear_1y_6m_4m_8.8y.png",
+    "model_sea_linear_1y_6m_4m_8.8y_3.67y.png",
+    "model_sea_linear_1y_6m_4m_8.8y_3.67y_4.4y.png",
+    "model_sea_linear_1y_6m_4m_8.8y_3.67y_4.4y_11y.png",
+    "model_sea_linear_1y_6m_4m_8.8y_3.67y_4.4y_11y_7.33.png"
 ];
 
 let i = 0;
